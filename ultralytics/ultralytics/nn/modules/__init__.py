@@ -59,6 +59,7 @@ from .block import (
     ResNetLayer,
     SCDown,
     TorchVision,
+    CoordAtt,
 )
 from .conv import (
     CBAM,
@@ -179,4 +180,5 @@ __all__ = (
     "YOLOEDetect",
     "YOLOESegment",
     "v10Detect",
+    "CoordAtt",
 )

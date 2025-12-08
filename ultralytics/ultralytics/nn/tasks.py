@@ -68,6 +68,7 @@ from ultralytics.nn.modules import (
     YOLOEDetect,
     YOLOESegment,
     v10Detect,
+    CoordAtt,
 )
 from ultralytics.utils import DEFAULT_CFG_DICT, LOGGER, YAML, colorstr, emojis
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -1643,6 +1644,8 @@ def parse_model(d, ch, verbose=True):
             c2 = args[0]
             c1 = ch[f]
             args = [*args[1:]]
+        elif m in {CoordAtt}:
+            args=[ch[f],*args]
         else:
             c2 = ch[f]
 
