@@ -1984,3 +1984,62 @@ class CoordAtt(nn.Module):
         a_w = self.conv_w(x_w).sigmoid()
         out = identity * a_w * a_h
         return out
+
+import torch
+import torch.nn as nn
+
+class ChannelAttention(nn.Module):
+    def __init__(self, in_planes, ratio=16):
+        super(ChannelAttention, self).__init__()
+        # 平均池化 (AvgPool) 和最大池化 (MaxPool)
+        self.avg_pool = nn.AdaptiveAvgPool2d(1)
+        self.max_pool = nn.AdaptiveMaxPool2d(1)
+
+        # 共享的多层感知机 (MLP)
+        self.shared_mlp = nn.Sequential(
+            nn.Conv2d(in_planes, in_planes // ratio, 1, bias=False),
+            nn.ReLU(),
+            nn.Conv2d(in_planes // ratio, in_planes, 1, bias=False)
+        )
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        avg_out = self.shared_mlp(self.avg_pool(x))
+        max_out = self.shared_mlp(self.max_pool(x))
+        # 两个输出相加后激活
+        out = avg_out + max_out
+        return self.sigmoid(out) * x
+
+class SpatialAttention(nn.Module):
+    def __init__(self, kernel_size=7):
+        super(SpatialAttention, self).__init__()
+        assert kernel_size in (3, 7), 'kernel size must be 3 or 7'
+        padding = 3 if kernel_size == 7 else 1
+
+        # 卷积层，用于生成空间注意力图
+        self.conv1 = nn.Conv2d(2, 1, kernel_size, padding=padding, bias=False)
+        self.sigmoid = nn.Sigmoid()
+
+    def forward(self, x):
+        # 沿通道维度进行平均池化和最大池化
+        avg_out = torch.mean(x, dim=1, keepdim=True)
+        max_out, _ = torch.max(x, dim=1, keepdim=True)
+        # 拼接 (Concat)
+        y = torch.cat([avg_out, max_out], dim=1)
+        # 卷积降维到 1 通道并激活
+        y = self.conv1(y)
+        return self.sigmoid(y) * x
+
+class CBAM(nn.Module):
+    # CBAM (Convolutional Block Attention Module)
+    def __init__(self, in_planes, ratio=16, kernel_size=7):
+        super(CBAM, self).__init__()
+        self.ca = ChannelAttention(in_planes, ratio)
+        self.sa = SpatialAttention(kernel_size)
+
+    def forward(self, x):
+        # 1. 应用通道注意力
+        x = self.ca(x)
+        # 2. 应用空间注意力
+        x = self.sa(x)
+        return x

@@ -60,6 +60,7 @@ from .block import (
     SCDown,
     TorchVision,
     CoordAtt,
+    CBAM,
 )
 from .conv import (
     CBAM,
@@ -181,4 +182,5 @@ __all__ = (
     "YOLOESegment",
     "v10Detect",
     "CoordAtt",
+    "CBAM",
 )
