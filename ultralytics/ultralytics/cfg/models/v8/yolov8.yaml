@@ -14,6 +14,9 @@ scales: # model compound scaling constants, i.e. 'model=yolov8n.yaml' will call 
   l: [1.00, 1.00, 512] # YOLOv8l summary: 209 layers, 43691520 parameters, 43691504 gradients, 165.7 GFLOPS
   x: [1.00, 1.25, 512] # YOLOv8x summary: 209 layers, 68229648 parameters, 68229632 gradients, 258.5 GFLOPS
 
+lr0: 0.001          # 初始学习率
+lrf: 0.0005 
+
 # YOLOv8.0n backbone
 backbone:
   # [from, repeats, module, args]

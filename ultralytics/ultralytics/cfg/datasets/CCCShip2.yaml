@@ -1,0 +1,12 @@
+path: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip # dataset root dir
+train: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\train.txt
+val: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\val.txt
+test: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\test.txt
+
+# Classes
+names:
+  0: AircraftCarrier
+  1: AmphibiousAssaultShip
+  2: Destroyer
+  3: Cruiser
+

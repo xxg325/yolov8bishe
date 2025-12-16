@@ -1,7 +1,7 @@
-path: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip # dataset root dir
-train: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets\train.txt
-val: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets\val.txt
-test: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets\test.txt
+path: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip # dataset root dir
+train: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets\train.txt
+val: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets\val.txt
+test: E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets\test.txt
 
 # Classes
 names:

@@ -10,30 +10,30 @@ random_seed = 42
 random.seed(random_seed)
 
 # 原始路径
-image_original_path = r"D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\images"
-label_original_path = r"D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\labels"
+image_original_path = r"E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\images"
+label_original_path = r"E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\labels"
 
-cur_path = os.getcwd()
+cur_path = r"E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip"
 
 # 训练集路径
-train_image_path = os.path.join(cur_path, "CCCShip\datasets\images\\train\\")
-train_label_path = os.path.join(cur_path, "CCCShip\datasets\labels\\train\\")
+train_image_path = os.path.join(cur_path, "datasets2\images\\train\\")
+train_label_path = os.path.join(cur_path, "datasets2\labels\\train\\")
 print("----------")
 # 验证集路径
-val_image_path = os.path.join(cur_path, "CCCShip\datasets\images\\val\\")
-val_label_path = os.path.join(cur_path, "CCCShip\datasets\labels\\val\\")
+val_image_path = os.path.join(cur_path, "datasets2\images\\val\\")
+val_label_path = os.path.join(cur_path, "datasets2\labels\\val\\")
 print("----------")
 # 测试集路径
-test_image_path = os.path.join(cur_path, "CCCShip\datasets\images\\test\\")
-test_label_path = os.path.join(cur_path, "CCCShip\datasets\labels\\test\\")
+test_image_path = os.path.join(cur_path, "datasets2\images\\test\\")
+test_label_path = os.path.join(cur_path, "datasets2\labels\\test\\")
 print("----------")
 # 训练集目录
-list_train = os.path.join(cur_path, "CCCShip\datasets\\train.txt")
-list_val = os.path.join(cur_path, "CCCShip\datasets\\val.txt")
-list_test = os.path.join(cur_path, "CCCShip\datasets\\test.txt")
+list_train = os.path.join(cur_path, "datasets2\\train.txt")
+list_val = os.path.join(cur_path, "datasets2\\val.txt")
+list_test = os.path.join(cur_path, "datasets2\\test.txt")
 print("----------")
-train_percent = 0.7
-val_percent = 0.2
+train_percent = 0.6
+val_percent = 0.3
 test_percent = 0.1
 print("----------")
 
