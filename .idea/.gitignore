@@ -1,3 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/yolov8bishe/ultralytics/ultralytics/cfg/datasets/3700YOLO
+/yolov8bishe/ultralytics/ultralytics/utils
