@@ -1,0 +1,54 @@
+# Ultralytics 🚀 AGPL-3.0 License - Modified for CBAM Attention
+
+# Parameters
+nc: 47 # number of classes for your ship dataset (请根据您的数据集类别数修改)
+scales:
+  # [depth, width, max_channels]
+  s: [0.33, 0.50, 1024] # 基于 YOLOv8s 的缩放因子
+
+# ----------------- Backbone 骨干网络 -----------------
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]]    # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]]   # 1-P2/4
+  - [-1, 3, C2f, [128, True]]    # 2
+
+  - [-1, 1, Conv, [256, 3, 2]]   # 3-P3/8
+  - [-1, 6, C2f, [256, True]]    # 4
+
+  - [-1, 1, Conv, [512, 3, 2]]   # 5-P4/16
+  - [-1, 6, C2f, [512, True]]    # 6
+  - [-1, 1, CBAM, [512]]         # ⚓ CBAM 1: 增强 P4/16 特征
+
+  - [-1, 1, Conv, [1024, 3, 2]]  # 8-P5/32
+  - [-1, 3, C2f, [1024, True]]   # 9
+  - [-1, 1, CBAM, [1024]]        # ⚓ CBAM 2: 增强 P5/32 特征
+  
+  - [-1, 1, SPPF, [1024, 5]]     # 11
+
+# ----------------- Head 头部/颈部网络 -----------------
+head:
+  # 上采样至 P4/16 层
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 7], 1, Concat, [1]]    # cat backbone P4 (从 backbone 的 CBAM 1 输出 (层 7) 处获取特征)
+  - [-1, 3, C2f, [512]]          # 14
+  - [-1, 1, CBAM, [512]]         # ⚓ CBAM 3: 增强 P4/16 融合特征
+
+  # 上采样至 P3/8 层
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 4], 1, Concat, [1]]    # cat backbone P3 (从 backbone 的 C2f 输出 (层 4) 处获取特征)
+  - [-1, 3, C2f, [256]]          # 17 (P3/8-small)
+  - [-1, 1, CBAM, [256]]         # ⚓ CBAM 4: 增强 P3/8 融合特征
+
+  # 下采样至 P4/16 层
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 14], 1, Concat, [1]]   # cat head P4 (从 head 的 CBAM 3 输出 (层 14) 处获取特征)
+  - [-1, 3, C2f, [512]]          # 20 (P4/16-medium)
+
+  # 下采样至 P5/32 层
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [[-1, 11], 1, Concat, [1]]   # cat head P5 (从 backbone 的 SPPF 输出 (层 11) 处获取特征)
+  - [-1, 3, C2f, [1024]]         # 23 (P5/32-large)
+
+  # 输出检测头
+  - [[17, 20, 23], 1, Detect, [nc]] # Detect(P3, P4, P5)
