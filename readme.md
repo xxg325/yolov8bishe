@@ -1,0 +1,1 @@
+yolo train model=ultralytics/cfg/models/mymodels/myyolov8s-cbam-p2.yaml  data=ultralytics/cfg/datasets/CCCShipmac.yaml use_focal=True focal_gamma=1.5 focal_alpha=0.25 epochs=3 imgsz=640
