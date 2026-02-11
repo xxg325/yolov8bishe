@@ -1,0 +1,57 @@
+path: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\3700YOLO # dataset root dir
+train: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\3700YOLO\datasets\train.txt
+val: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\3700YOLO\datasets\val.txt
+test: D:\gzx\yolov8bishe\ultralytics\ultralytics\cfg\datasets\3700YOLO\datasets\test.txt
+
+# Classes
+names:
+  0: Landing-Ship-Yushen-Class-075-CHI
+  1: Submarine-Shishumar-Class-IND
+  2: Patrol-Vessel-L-T-Class-IND
+  3: Frigate-Talwar-Class-IND
+  4: Destroyer-Kolkata-Class-IND
+  5: Destroyer-Rajput-Class-IND
+  6: Submarine-Agosta-Class-PAK
+  7: Frigate-Godavari-Class-IND
+  8: Tanker-Deepak-Class-IND
+  9: Frigate-Shivalik-Class-IND
+  10: Landing-Ship-Shardul-Class-IND
+  11: Destroyer-Renhai-Class-055-CHI
+  12: Submarine-Yuan-Class-CHI
+  13: Corvette-Khukri-Class-IND
+  14: Aircraft-Carrier-Kuznetsov-Class-CHI
+  15: Landing-Ship-Austin-Class-IND
+  16: Frigate-Brahmaputra-Class-IND
+  17: Tanker-Komandarm_Fedko_Class-IND
+  18: Corvette-Jiangdao-class-056-CHI
+  19: Submarine-Arihant-Class-IND
+  20: Corvette-Kamorta-Class-IND
+  21: Patrol-Vessel-Saryu-Class-IND
+  22: Submarine-Kalvari-Class-IND
+  23: Patrol-Vessel-Sukanya-Class-IND
+  24: Corvette-Azmat-Class-PAK
+  25: Submarine-Sindhughosh-Class-IND
+  26: Aircraft-Carrier-Kiev Class-IND
+  27: Landing-Ship-Magar-Class-IND
+  28: Aircraft-Carrier-Fujian-Class-CHI
+  29: Aircraft-Carrier-Vikrant-Class-IND
+  30: Submarine-Akula-Class-IND
+  31: Submarine-Jin-Class-CHI
+  32: Corvette-Kora-Class-IND
+  33: Frigate-Zulfiquar-Class-PAK
+  34: Submarine-Hangor-Class-PAK
+  35: Destroyer-Luyang-III-class-052-CHI
+  36: Patrol-Vessel-Car-Nicobar-Class-IND
+  37: Research-Vessel-Sagardhwani-Class-IND
+  38: Corvette-Yarmook-Class-PAK
+  39: Destroyer-Delhi-Class-IND
+  40: Destroyer-Visakhapatnam-Class-IND
+  41: Corvette-Veer-Class-IND
+  42: Frigate-Tughril-Class-PAK
+  43: Tanker-Moawin-Class-PAK
+  44: Tanker-Aditya-Class-IND
+  45: Minesweeper-Pondicherry-Class-IND
+  46: Corvette-Babur-Class-PAK
+
+    
+

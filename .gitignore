@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 模型权重文件（太大了，通常不上传）
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# 训练结果（可选，如果需要上传可以注释掉）
+# runs/

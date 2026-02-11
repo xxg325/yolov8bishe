@@ -1,0 +1,191 @@
+﻿WARNING no model scale passed. Assuming scale='s'.
+Ultralytics 8.3.231  Python-3.10.19 torch-2.10.0.dev20251208+cu128 CUDA:0 (NVIDIA GeForce RTX 5090 D, 32607MiB)
+[34m[1mengine\trainer: [0magnostic_nms=False, amp=True, augment=False, auto_augment=randaugment, batch=32, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip2.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=500, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.005, lrf=0.001, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\models\mymodels\yolov8CBAM.yaml, momentum=0.937, mosaic=1.0, multi_scale=False, name=2yolov8s_CBAM, nbs=64, nms=False, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=100, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=None, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=E:\gzx\bishe\part1\yolov8bishe\runs\detect\2yolov8s_CBAM, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=8, workspace=None
+WARNING no model scale passed. Assuming scale='s'.
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]                 
+  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]             
+  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  5                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]           
+  7                  -1  1     65890  ultralytics.nn.modules.conv.CBAM             [256]                         
+  8                  -1  1   1180672  ultralytics.nn.modules.conv.Conv             [256, 512, 3, 2]              
+  9                  -1  1   1838080  ultralytics.nn.modules.block.C2f             [512, 512, 1, True]           
+ 10                  -1  1    262754  ultralytics.nn.modules.conv.CBAM             [512]                         
+ 11                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 
+ 12                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 13             [-1, 7]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 14                  -1  1    591360  ultralytics.nn.modules.block.C2f             [768, 256, 1]                 
+ 15                  -1  1     65890  ultralytics.nn.modules.conv.CBAM             [256]                         
+ 16                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 17             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 19                  -1  1     16610  ultralytics.nn.modules.conv.CBAM             [128]                         
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 21            [-1, 14]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 23                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 24            [-1, 11]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 25                  -1  1   1969152  ultralytics.nn.modules.block.C2f             [768, 512, 1]                 
+ 26        [17, 20, 23]  1   7576924  ultralytics.nn.modules.head.Detect           [4, [384, 128, 256]]          
+YOLOv8CBAM summary: 149 layers, 17,007,620 parameters, 17,007,604 gradients, 68.6 GFLOPs
+
+Freezing layer 'model.26.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed 
+[34m[1mtrain: [0mFast image access  (ping: 0.00.0 ms, read: 3147.61177.0 MB/s, size: 243.7 KB)
+
+[K[34m[1mtrain: [0mScanning E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\labels\train.cache... 640 images, 0 backgrounds, 0 corrupt: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 640/640  0.0s
+[K[34m[1mtrain: [0mScanning E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\labels\train.cache... 640 images, 0 backgrounds, 0 corrupt: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 640/640  0.0s
+[34m[1mtrain: [0mE:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\images\train\ship02_0282.jpg: corrupt JPEG restored and saved
+[34m[1mval: [0mFast image access  (ping: 0.10.0 ms, read: 733.2198.3 MB/s, size: 546.4 KB)
+
+[K[34m[1mval: [0mScanning E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\labels\val.cache... 320 images, 0 backgrounds, 0 corrupt: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 320/320  0.0s
+[K[34m[1mval: [0mScanning E:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\labels\val.cache... 320 images, 0 backgrounds, 0 corrupt: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 320/320  0.0s
+[34m[1mval: [0mE:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\images\val\ship02_0086.jpg: corrupt JPEG restored and saved
+[34m[1mval: [0mE:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\images\val\ship02_0306.jpg: corrupt JPEG restored and saved
+[34m[1mval: [0mE:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\images\val\ship03_0049.jpg: corrupt JPEG restored and saved
+[34m[1mval: [0mE:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\images\val\ship03_0272.jpg: corrupt JPEG restored and saved
+[34m[1mval: [0mE:\gzx\bishe\part1\yolov8bishe\ultralytics\ultralytics\cfg\datasets\CCCShip\datasets2\images\val\ship04_0082.jpg: corrupt JPEG restored and saved
+Plotting labels to E:\gzx\bishe\part1\yolov8bishe\runs\detect\2yolov8s_CBAM\labels.jpg... 
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.005' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m AdamW(lr=0.00125, momentum=0.9) with parameter groups 57 weight(decay=0.0), 72 weight(decay=0.0005), 67 bias(decay=0.0)
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mE:\gzx\bishe\part1\yolov8bishe\runs\detect\2yolov8s_CBAM[0m
+Starting training for 500 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+
+[K      1/500      8.18G       3.22      4.259       4.28         98        640: 0% 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 0/20  2.8s
+[K      1/500      8.18G      3.408      4.327      4.275         91        640: 5% 鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/20 1.9s/it 3.4s<35.9s
+[K      1/500      8.18G      3.427      4.355      4.281        107        640: 10% 鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 2/20 1.4s/it 4.2s<24.4s
+[K      1/500      8.18G      3.403      4.339      4.278         97        640: 15% 鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 3/20 1.2s/it 5.1s<19.8s
+[K      1/500      8.22G      3.336      4.324      4.271         98        640: 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 4/20 1.0s/it 5.9s<16.5s
+[K      1/500      8.22G      3.337      4.301      4.269         89        640: 25% 鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 5/20 1.4it/s 6.3s<10.8s
+[K      1/500      8.22G      3.352      4.289       4.26         91        640: 30% 鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 6/20 1.9it/s 6.7s<7.5s
+[K      1/500      8.22G      3.313       4.29       4.27         79        640: 35% 鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 7/20 1.9it/s 7.1s<6.7s
+[K      1/500      8.22G      3.317      4.296      4.263         86        640: 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 8/20 1.8it/s 7.8s<6.6s
+[K      1/500      8.22G      3.324       4.29      4.258         96        640: 45% 鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€ 9/20 1.9it/s 8.3s<5.8s
+[K      1/500      8.22G      3.318      4.294      4.255         91        640: 50% 鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€ 10/20 2.5it/s 8.5s<4.1s
+[K      1/500      8.22G      3.302      4.284      4.251         91        640: 55% 鈹佲攣鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€ 11/20 2.8it/s 8.8s<3.2s
+[K      1/500      8.22G      3.281      4.268      4.247         88        640: 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 12/20 3.6it/s 9.0s<2.2s
+[K      1/500      8.22G      3.285      4.259      4.243        106        640: 65% 鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€ 13/20 4.2it/s 9.2s<1.7s
+[K      1/500      8.22G      3.284       4.25      4.237        101        640: 70% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€ 14/20 4.4it/s 9.4s<1.4s
+[K      1/500      8.22G      3.278      4.238      4.232        111        640: 75% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€ 15/20 4.6it/s 9.6s<1.1s
+[K      1/500      8.22G      3.265      4.226      4.227         93        640: 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 16/20 4.8it/s 9.8s<0.8s
+[K      1/500      8.22G      3.262      4.215      4.223        101        640: 85% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€ 17/20 4.8it/s 10.0s<0.6s
+[K      1/500      8.22G      3.266      4.209      4.218        104        640: 90% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈺糕攢 18/20 4.9it/s 10.2s<0.4s
+[K      1/500      8.22G      3.262      4.201      4.211        104        640: 95% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢 19/20 5.0it/s 10.4s<0.2s
+[K      1/500      8.22G      3.262      4.201      4.211        104        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 1.9it/s 10.4s
+[K      1/500      8.22G      3.262      4.201      4.211        104        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 1.9it/s 10.4s
+
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/5 1.3s/it 0.4s<5.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 2/5 1.6it/s 0.7s<1.8s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 3/5 2.8it/s 0.8s<0.7s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 4/5 3.0it/s 1.1s<0.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 2.8it/s 1.8s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 2.8it/s 1.8s
+                   all        320        410    0.00185      0.336    0.00167   0.000467
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+
+[K      2/500      11.3G      3.115      4.036      4.074         90        640: 0% 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 0/20  0.3s
+[K      2/500      11.3G      3.174      3.995      4.059        106        640: 5% 鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/20 1.2it/s 0.5s<15.9s
+[K      2/500      11.3G      3.176      3.986      4.041         91        640: 10% 鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 2/20 2.3it/s 0.7s<7.8s
+[K      2/500      11.3G      3.177      3.988       4.03        118        640: 15% 鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 3/20 3.3it/s 0.9s<5.2s
+[K      2/500      11.3G      3.157      4.001      4.018         85        640: 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 4/20 3.7it/s 1.1s<4.3s
+[K      2/500      11.3G      3.127      4.004      4.012        101        640: 25% 鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 5/20 4.1it/s 1.3s<3.7s
+[K      2/500      11.3G      3.128      3.996      3.998        101        640: 30% 鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 6/20 4.5it/s 1.5s<3.1s
+[K      2/500      11.3G      3.115      3.992      3.984         88        640: 35% 鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 7/20 4.3it/s 1.8s<3.0s
+[K      2/500      11.3G       3.07      3.986      3.966         98        640: 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 8/20 4.7it/s 1.9s<2.6s
+[K      2/500      11.3G      3.064      3.959      3.947        108        640: 45% 鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€ 9/20 4.7it/s 2.2s<2.3s
+[K      2/500      11.3G      3.041      3.944      3.931        106        640: 50% 鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€ 10/20 4.8it/s 2.4s<2.1s
+[K      2/500      11.3G      3.033      3.942      3.916        100        640: 55% 鈹佲攣鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€ 11/20 5.0it/s 2.5s<1.8s
+[K      2/500      11.3G       3.01      3.936      3.902         95        640: 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 12/20 4.8it/s 2.8s<1.7s
+[K      2/500      11.3G      2.993       3.93      3.892         92        640: 65% 鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€ 13/20 4.8it/s 3.0s<1.4s
+[K      2/500      11.3G      2.986      3.926      3.873         96        640: 70% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€ 14/20 4.9it/s 3.2s<1.2s
+[K      2/500      11.3G       2.99       3.92      3.856         90        640: 75% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€ 15/20 5.2it/s 3.3s<1.0s
+[K      2/500      11.3G      2.975      3.914       3.84        107        640: 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 16/20 5.2it/s 3.5s<0.8s
+[K      2/500      11.3G      2.972      3.903      3.826        109        640: 85% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€ 17/20 5.8it/s 3.7s<0.5s
+[K      2/500      11.3G      2.966      3.902      3.812        102        640: 90% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈺糕攢 18/20 6.2it/s 3.8s<0.3s
+[K      2/500      11.3G      2.952      3.901      3.804         97        640: 95% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢 19/20 6.3it/s 4.0s<0.2s
+[K      2/500      11.3G      2.952      3.901      3.804         97        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 5.1it/s 4.0s
+[K      2/500      11.3G      2.952      3.901      3.804         97        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 5.1it/s 4.0s
+
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/5 1.6it/s 0.2s<2.5s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 2/5 2.5it/s 0.4s<1.2s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 3/5 2.2it/s 1.0s<0.9s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 4/5 2.1it/s 1.6s<0.5s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 2.3it/s 2.1s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 2.3it/s 2.1s
+                   all        320        410    0.00199      0.352     0.0015   0.000417
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+
+[K      3/500      11.3G      2.661      3.645      3.541        111        640: 0% 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 0/20  0.2s
+[K      3/500      11.3G      2.721      3.653      3.509        115        640: 5% 鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/20 1.6it/s 0.4s<11.7s
+[K      3/500      11.3G      2.707      3.673      3.514        100        640: 10% 鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 2/20 2.9it/s 0.6s<6.2s
+[K      3/500      11.3G      2.707      3.724      3.503         95        640: 15% 鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 3/20 3.4it/s 0.8s<5.0s
+[K      3/500      11.3G      2.692      3.738      3.491         91        640: 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 4/20 3.9it/s 1.0s<4.1s
+[K      3/500      11.3G      2.676      3.763      3.495         94        640: 25% 鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 5/20 4.3it/s 1.2s<3.5s
+[K      3/500      11.3G      2.686      3.758      3.475         93        640: 30% 鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 6/20 4.5it/s 1.4s<3.1s
+[K      3/500      11.3G       2.68      3.774      3.476         90        640: 35% 鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 7/20 4.7it/s 1.6s<2.8s
+[K      3/500      11.3G      2.672      3.773      3.464        111        640: 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 8/20 5.0it/s 1.8s<2.4s
+[K      3/500      11.3G      2.673      3.775      3.449        106        640: 45% 鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€ 9/20 4.8it/s 2.0s<2.3s
+[K      3/500      11.3G      2.671      3.763      3.428        104        640: 50% 鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€ 10/20 5.2it/s 2.2s<1.9s
+[K      3/500      11.3G      2.671      3.764      3.432         89        640: 55% 鈹佲攣鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€ 11/20 5.3it/s 2.3s<1.7s
+[K      3/500      11.3G      2.682       3.76       3.43         93        640: 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 12/20 5.1it/s 2.5s<1.6s
+[K      3/500      11.3G      2.675      3.754      3.426        117        640: 65% 鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€ 13/20 5.1it/s 2.7s<1.4s
+[K      3/500      11.3G       2.68      3.752      3.418        114        640: 70% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€ 14/20 5.5it/s 2.9s<1.1s
+[K      3/500      11.3G      2.672      3.749      3.411        110        640: 75% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€ 15/20 5.5it/s 3.1s<0.9s
+[K      3/500      11.3G      2.667      3.739      3.401        104        640: 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 16/20 6.0it/s 3.2s<0.7s
+[K      3/500      11.3G       2.66      3.728      3.389         92        640: 85% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€ 17/20 5.9it/s 3.4s<0.5s
+[K      3/500      11.3G      2.656       3.73       3.38         98        640: 90% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈺糕攢 18/20 6.5it/s 3.5s<0.3s
+[K      3/500      11.3G      2.646      3.722      3.369         98        640: 95% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢 19/20 6.5it/s 3.7s<0.2s
+[K      3/500      11.3G      2.646      3.722      3.369         98        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 5.5it/s 3.7s
+[K      3/500      11.3G      2.646      3.722      3.369         98        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 5.5it/s 3.7s
+
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/5 1.9it/s 0.2s<2.1s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 2/5 3.0it/s 0.3s<1.0s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 3/5 3.6it/s 0.5s<0.6s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 4/5 3.0it/s 1.2s<0.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 2.8it/s 1.8s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 2.8it/s 1.8s
+                   all        320        410   0.000609     0.0558   0.000395   0.000125
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+
+[K      4/500      11.3G      2.565      3.637       3.29         99        640: 0% 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 0/20  0.3s
+[K      4/500      11.3G      2.545      3.611      3.259        116        640: 5% 鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/20 1.2it/s 0.5s<15.8s
+[K      4/500      11.3G      2.566      3.609      3.268        127        640: 10% 鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 2/20 2.4it/s 0.7s<7.6s
+[K      4/500      11.3G      2.564      3.583      3.247        110        640: 15% 鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 3/20 2.8it/s 1.0s<6.1s
+[K      4/500      11.3G      2.536      3.579      3.215        101        640: 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 4/20 3.2it/s 1.2s<5.0s
+[K      4/500      11.3G      2.526        3.6      3.216         93        640: 25% 鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 5/20 3.2it/s 1.5s<4.6s
+[K      4/500      11.3G      2.524      3.594      3.203        109        640: 30% 鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 6/20 3.7it/s 1.7s<3.8s
+[K      4/500      11.3G      2.521      3.596      3.205        107        640: 35% 鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 7/20 3.7it/s 2.0s<3.6s
+[K      4/500      11.3G      2.517      3.599      3.196         88        640: 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 8/20 4.2it/s 2.2s<2.8s
+[K      4/500      11.3G      2.507      3.591      3.185        110        640: 45% 鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€鈹€鈹€ 9/20 4.2it/s 2.4s<2.6s
+[K      4/500      11.3G      2.515      3.586      3.179        115        640: 50% 鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€ 10/20 4.5it/s 2.6s<2.2s
+[K      4/500      11.3G      2.525      3.586      3.179        105        640: 55% 鈹佲攣鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€ 11/20 4.3it/s 2.9s<2.1s
+[K      4/500      11.3G      2.537      3.602      3.182         78        640: 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 12/20 4.4it/s 3.1s<1.8s
+[K      4/500      11.3G      2.531      3.598      3.179         94        640: 65% 鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€鈹€鈹€ 13/20 4.2it/s 3.4s<1.7s
+[K      4/500      11.3G       2.53      3.592      3.177        117        640: 70% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€鈹€鈹€ 14/20 4.3it/s 3.6s<1.4s
+[K      4/500      11.3G      2.531      3.595      3.182        105        640: 75% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€ 15/20 4.1it/s 3.9s<1.2s
+[K      4/500      11.3G      2.524      3.585      3.176        103        640: 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 16/20 4.3it/s 4.1s<0.9s
+[K      4/500      11.3G      2.521      3.577      3.169        108        640: 85% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹€鈹€ 17/20 4.1it/s 4.3s<0.7s
+[K      4/500      11.3G      2.518      3.575      3.168         94        640: 90% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈺糕攢 18/20 4.2it/s 4.6s<0.5s
+[K      4/500      11.3G       2.52      3.567      3.166        118        640: 95% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攢 19/20 4.3it/s 4.8s<0.2s
+[K      4/500      11.3G       2.52      3.567      3.166        118        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 4.2it/s 4.8s
+[K      4/500      11.3G       2.52      3.567      3.166        118        640: 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 20/20 4.2it/s 4.8s
+
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 20% 鈹佲攣鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€ 1/5 1.1it/s 0.3s<3.5s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 40% 鈹佲攣鈹佲攣鈺糕攢鈹€鈹€鈹€鈹€鈹€鈹€ 2/5 1.7it/s 0.6s<1.7s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 60% 鈹佲攣鈹佲攣鈹佲攣鈹佲攢鈹€鈹€鈹€鈹€ 3/5 1.7it/s 1.2s<1.2s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 80% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲暩鈹€鈹€ 4/5 1.4it/s 2.9s<0.7s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 1.2it/s 4.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% 鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣鈹佲攣 5/5 1.2it/s 4.3s
+                   all        320        410          0          0          0          0
