@@ -1,7 +1,7 @@
-path: CCCShip # dataset root dir (相对于此yaml文件的位置)
-train: datasets/train.txt
-val: datasets/val.txt
-test: datasets/test.txt
+path: ultralytics/cfg/datasets/CCCShip/datasets2 # dataset root dir (相对于仓库根目录)
+train: images/train
+val: images/val
+test: images/test
 
 # Classes
 names:

@@ -17,4 +17,6 @@ __pycache__/
 *.engine
 
 # 训练结果（可选，如果需要上传可以注释掉）
-# runs/
+runs/
+
+ultralytics/ultralytics/cfg/datasets/**/labels/*.cache
